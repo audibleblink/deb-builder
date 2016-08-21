@@ -1,0 +1,9 @@
+#!/bin/bash -e
+
+cd urxvt
+checkinstall -Dy \
+        --pkgname=rxvt-unicode \
+        --nodoc \
+        --provides=urxvt \
+        --pkgversion="$(date +%Y%m%d)" &&\
+        mv *.deb /tmp/

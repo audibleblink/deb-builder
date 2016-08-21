@@ -30,9 +30,6 @@ RUN git clone https://github.com/audibleblink/rxvt-unicode-24bit.git urxvt && \
 
 # add kickoff scripts for each application
 WORKDIR $SOURCE
-ADD neovim build_neovim
-ADD urxvt build_urxvt
-
-CMD /bin/sh -c
-
+ENTRYPOINT ["/bin/bash", "build"]
+ADD build build
 # run this image with sudo docker run -v /tmp:/tmp <image_name> <neovim|urxvt>.

@@ -1,0 +1,34 @@
+#!/bin/bash
+
+if [ $# -eq 0 ]; then
+        echo 'You must enter a package name. Check the build script for options'
+        exit 1
+fi
+
+
+if [ "$1" == 'urxvt' ]; then
+        cd urxvt
+        checkinstall -Dy \
+                --pkgname=rxvt-unicode \
+                --nodoc \
+                --provides=urxvt \
+                --pkgversion="$(date +%Y%m%d)" &&\
+                mv *.deb /tmp/
+        exit 0
+fi
+
+if [ "$1" == 'neovim' ]; then
+        cd urxvt
+        checkinstall -Dy \
+                --pkgname=neovim \
+                --nodoc --provides=neovim \
+                --requires=perl,python \
+                --pkgversion="$(date +%Y%m%d)" && \
+                mv *.deb /tmp/  
+        exit 0
+fi
+
+if [ "$1" == 'i3gaps' ]; then
+        echo 'TODO: implement i3'
+        exit 0
+fi

@@ -6,35 +6,36 @@ ENV SOURCE /source
 VOLUME /tmp
 
 RUN apt-get update && \
-    apt-get -qy install git autoconf \
-                            automake \
-                            cmake \
-                            g++ \
-                            git \
-                            libev-dev \
-                            libevent-dev \
-                            libglib2.0-dev \
-                            libpango1.0-dev \
-                            libperl-dev \
-                            libreadline-dev \
-                            libssl-dev \
-                            libstartup-notification0-dev \
-                            libtool \
-                            libtool-bin \
-                            libvte-2.91-dev \
-                            libxcb1-dev \
-                            libxcb-cursor-dev \
-                            libxcb-icccm4-dev \
-                            libxcb-keysyms1-dev \
-                            libxcb-randr0-dev \
-                            libxcb-util0-dev \
-                            libxcb-xinerama0-dev \
-                            libxcb-xkb-dev \
-                            libxkbcommon-dev \
-                            libxkbcommon-x11-dev \
-                            libyajl-dev \
-                            pkg-config \
-                            unzip
+    apt-get -qy install \
+                autoconf \
+                automake \
+                cmake \
+                g++ \
+                git \
+                libev-dev \
+                libevent-dev \
+                libglib2.0-dev \
+                libpango1.0-dev \
+                libperl-dev \
+                libreadline-dev \
+                libssl-dev \
+                libstartup-notification0-dev \
+                libtool \
+                libtool-bin \
+                libvte-2.91-dev \
+                libxcb1-dev \
+                libxcb-cursor-dev \
+                libxcb-icccm4-dev \
+                libxcb-keysyms1-dev \
+                libxcb-randr0-dev \
+                libxcb-util0-dev \
+                libxcb-xinerama0-dev \
+                libxcb-xkb-dev \
+                libxkbcommon-dev \
+                libxkbcommon-x11-dev \
+                libyajl-dev \
+                pkg-config \
+                unzip
 
 
 # installs patched version of checkinstall that allows neovim deb creation

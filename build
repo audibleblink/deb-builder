@@ -21,7 +21,8 @@ if [ "$1" == 'neovim' ]; then
         cd urxvt
         checkinstall -Dy \
                 --pkgname=neovim \
-                --nodoc --provides=neovim \
+                --nodoc \
+                --provides=neovim \
                 --requires=perl,python \
                 --pkgversion="$(date +%Y%m%d)" && \
                 mv *.deb /tmp/  
@@ -29,6 +30,14 @@ if [ "$1" == 'neovim' ]; then
 fi
 
 if [ "$1" == 'i3gaps' ]; then
-        echo 'TODO: implement i3'
+        cd i3-gaps
+        checkinstall -Dy \
+                --pkgname=i3 \
+                --nodoc \
+                --provides=i3 \
+                --pkgversion="$(date +%Y%m%d)" && \
+                mv *.deb /tmp/
         exit 0
 fi
+
+echo 'No matching apps found'
